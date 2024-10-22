@@ -34,7 +34,8 @@ public class CustomListTest {
      * create a mocklist for my citylist * @return
      */
     public CustomList MockCityList(){
-        list = new CustomList(null,new ArrayList<>()); return list;
+        list = new CustomList(null,new ArrayList<>());
+        return list;
     }
 
     /**
@@ -50,9 +51,11 @@ public class CustomListTest {
 
     @Test
     public void testHasCity() {
+        list = MockCityList();
         City city = new City("Estevan", "SK");
-        assertFalse(list.hasCity(city)); // Should return false since city is not added yet
+        assertFalse(list.hasCity(city)); // Should return false initially
         list.addCity(city);
         assertTrue(list.hasCity(city)); // Should return true after adding the city
     }
+
 }
