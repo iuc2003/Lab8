@@ -70,4 +70,17 @@ public class CustomList extends ArrayAdapter<City> {
         return false;
     }
 
+    public void deleteCity(City city) {
+        City cityToRemove = null;
+
+        for (City c : cities) {
+            if (c.getCityName().equals(city.getCityName())) {
+                cityToRemove = c;
+                break;
+            }
+        }
+
+        cities.remove(cityToRemove);
+    }
+
 }
